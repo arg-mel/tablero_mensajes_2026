@@ -32,6 +32,7 @@ class PruebasPublicacion(TestCase):
         self.assertEqual(respuesta.status_code, 200)
         self.assertTemplateUsed(respuesta, "lista_publicaciones.html")
         self.assertContains(respuesta, "¡Esto es una prueba!")
+        self.assertContains(respuesta, "Anónimo")
 
 
 
