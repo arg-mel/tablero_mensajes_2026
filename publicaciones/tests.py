@@ -12,6 +12,9 @@ class PruebasPublicacion(TestCase):
     def test_contenido_modelo(self):
         self.assertEqual(self.publicacion.texto, "¡Esto es una prueba!")
 
+    def test_str_modelo(self):
+        self.assertEqual(str(self.publicacion), "¡Esto es una prueba!")
+
     def test_url_existe_ubicacion_correcta(self):
         respuesta = self.client.get("/")
         self.assertEqual(respuesta.status_code, 200)
