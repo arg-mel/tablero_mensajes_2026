@@ -9,7 +9,7 @@
   <p>Hay {{ publicaciones|length }} publicaciones.</p>
   <ul>
     {% for publicacion in publicaciones %}
-      <li>{{ publicacion.texto }}</li>
+      <li>{{ publicacion.texto }} <small>({{ publicacion.fecha|date:"j \d\e F, H:i" }})</small></li>
     {% empty %}
       <li>Todavía no hay publicaciones.</li>
     {% endfor %}

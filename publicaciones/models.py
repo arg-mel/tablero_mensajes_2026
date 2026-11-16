@@ -4,6 +4,7 @@ from django.db import models
 class Publicacion(models.Model):
     texto = models.TextField()
     fecha = models.DateTimeField("fecha de publicación", auto_now_add=True)
+    autor = models.CharField("autor", max_length=50, default="Anónimo")
 
     class Meta:
         ordering = ["-fecha"]
