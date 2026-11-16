@@ -21,3 +21,12 @@ class PruebasPublicacion(TestCase):
         self.assertEqual(respuesta.status_code, 200)
         self.assertTemplateUsed(respuesta, "lista_publicaciones.html")
         self.assertContains(respuesta, "¡Esto es una prueba!")
+
+
+
+class PruebasSinPublicaciones(TestCase):
+    def test_pagina_vacia(self):
+        respuesta = self.client.get(reverse("inicio"))
+        self.assertEqual(respuesta.status_code, 200)
+        self.assertContains(respuesta, "Todavía no hay publicaciones.")
+        self.assertContains(respuesta, "Hay 0 publicaciones.")

@@ -6,6 +6,7 @@
 </head>
 <body>
   <h1>Tablero de mensajes</h1>
+  <p>Hay {{ publicaciones|length }} publicaciones.</p>
   <ul>
     {% for publicacion in publicaciones %}
       <li>{{ publicacion.texto }}</li>
